@@ -286,11 +286,8 @@ var Policy =
 
         // Store node data
         data.addNode(node, contentType, docDomain, thirdParty, locationText, match);
-        if (match) {
+        if (match)
             FilterStorage.increaseHitCount(match);
-            let ad = docDomain + " " + locationText + " " + Policy.typeDescr[contentType];
-            //Utils.alert( null, ad, ad );
-        }
 
         return !match || match instanceof WhitelistFilter;
     },
@@ -484,28 +481,30 @@ function postProcessNodes()
     let nodes = scheduledNodes;
     scheduledNodes = null;
 
-    for each (let node in nodes) {
-            // adjust frameset's cols/rows for frames
-            let parentNode = node.parentNode;
-            if (parentNode && parentNode instanceof Ci.nsIDOMHTMLFrameSetElement) {
-                let hasCols = (parentNode.cols && parentNode.cols.indexOf(",") > 0);
-                let hasRows = (parentNode.rows && parentNode.rows.indexOf(",") > 0);
-                if ((hasCols || hasRows) && !(hasCols && hasRows)) {
-                    let index = -1;
-                    for (let frame = node; frame; frame = frame.previousSibling)
-                        if (frame instanceof Ci.nsIDOMHTMLFrameElement || frame instanceof Ci.nsIDOMHTMLFrameSetElement)
-                            index++;
+    for each (let node in nodes)
+                 {
+                     // adjust frameset's cols/rows for frames
+                     let parentNode = node.parentNode;
+                     if (parentNode && parentNode instanceof Ci.nsIDOMHTMLFrameSetElement)
+                         {
+                             let hasCols = (parentNode.cols && parentNode.cols.indexOf(",") > 0);
+                             let hasRows = (parentNode.rows && parentNode.rows.indexOf(",") > 0);
+                             if ((hasCols || hasRows) && !(hasCols && hasRows))
+                                 {
+                                     let index = -1;
+                                     for (let frame = node; frame; frame = frame.previousSibling)
+                                         if (frame instanceof Ci.nsIDOMHTMLFrameElement || frame instanceof Ci.nsIDOMHTMLFrameSetElement)
+                                             index++;
     
-                    let property = (hasCols ? "cols" : "rows");
-                    let weights = parentNode[property].split(",");
-                    weights[index] = "0";
-                    // parentNode[property] = weights.join(",");
-                }
-            }
-            else {
-                node.className += " " + collapsedClass;
-            }
-        }
+                                     let property = (hasCols ? "cols" : "rows");
+                                     let weights = parentNode[property].split(",");
+                                     weights[index] = "0";
+                                     parentNode[property] = weights.join(",");
+                                 }
+                         }
+                     else
+                         node.className += " " + collapsedClass;
+                 }
 }
 
 /**
