@@ -1,0 +1,9 @@
+<!ENTITY dialog.title.edit "Editar inscrição de filtro">
+<!ENTITY other.label "Adicionar outra inscrição">
+<!ENTITY other.accesskey "O">
+<!ENTITY title.label "Título da inscrição:">
+<!ENTITY title.accesskey "T">
+<!ENTITY location.label "Localização da lista de filtros:">
+<!ENTITY location.accesskey "L">
+<!ENTITY autodownload.label "Atualizar automaticamente">
+<!ENTITY autodownload.accesskey "A">

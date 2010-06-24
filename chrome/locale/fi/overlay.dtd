@@ -1,0 +1,23 @@
+<!ENTITY status.tooltip "Tila:">
+<!ENTITY blocked.tooltip "Tämän sivun estetyt elementit:">
+<!ENTITY filters.tooltip "Aktiivisimmat suodattimet:">
+<!ENTITY menuitem.label "Adblock Plus - Asetukset">
+<!ENTITY menuitem.accesskey "d">
+<!ENTITY toolbarbutton.label "Adblock Plus">
+<!ENTITY view.blockableItems.label "Adblock Plus: Estettävät elementit">
+<!ENTITY context.image.label "Adblock Plus: Estä kuva">
+<!ENTITY context.object.label "Adblock Plus: Estä kohde">
+<!ENTITY context.frame.label "Adblock Plus: Estä kehys">
+<!ENTITY context.media.label "Adblock Plus: Estä ääni/kuva">
+<!ENTITY context.removeWhitelist.label "Adblock Plus: Ota tämä sivu uudestaan käyttöön">
+<!ENTITY sidebar.title "Estettävät elementit avoimella sivulla">
+<!ENTITY settings.label "Asetukset">
+<!ENTITY settings.accesskey "A">
+<!ENTITY opensidebar.label "Näytä elementit">
+<!ENTITY opensidebar.accesskey "e">
+<!ENTITY closesidebar.label "Sulje elementit">
+<!ENTITY closesidebar.accesskey "e">
+<!ENTITY whitelist.site.label "Ei käytössä osoitteessa ?1?">
+<!ENTITY whitelist.page.label "Ei käytössä tällä sivulla">
+<!ENTITY objecttab.title "Estä">
+<!ENTITY objecttab.tooltip "Estä tämä objekti Adblock Plussalla">

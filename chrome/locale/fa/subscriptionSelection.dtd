@@ -1,0 +1,9 @@
+<!ENTITY dialog.title.edit "ويرايش آبونه فيلتر">
+<!ENTITY other.label "اشتراک ديگر">
+<!ENTITY other.accesskey "گ">
+<!ENTITY title.label "عنوان اشتراک:">
+<!ENTITY title.accesskey "ش">
+<!ENTITY location.label "نشانی فهرست فیلتر:">
+<!ENTITY location.accesskey "ف">
+<!ENTITY autodownload.label "به‌روزرسانی خودکار">
+<!ENTITY autodownload.accesskey "خ">

@@ -1,0 +1,8 @@
+data/.hgtags.i
+data/LocaleTester.pm.i
+data/Packager.pm.i
+data/create_xpi.pl.i
+data/make_babelzilla_build.pl.i
+data/make_devbuild.pl.i
+data/make_release.pl.i
+data/setupTestEnvironment.pl.i

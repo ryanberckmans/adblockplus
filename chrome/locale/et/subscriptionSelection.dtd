@@ -1,0 +1,10 @@
+<!ENTITY dialog.title "Lisa reklaamifiltri tellimuse">
+<!ENTITY dialog.title.edit "Muuda filtri tellimust">
+<!ENTITY other.label "Lisa uus tellimus">
+<!ENTITY other.accesskey "L">
+<!ENTITY title.label "Tellimuse pealkiri:">
+<!ENTITY title.accesskey "T">
+<!ENTITY location.label "Flitri nimekirja asukoht:">
+<!ENTITY location.accesskey "F">
+<!ENTITY autodownload.label "Uuenda automaatselt">
+<!ENTITY autodownload.accesskey "U">

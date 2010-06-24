@@ -1,0 +1,29 @@
+<!ENTITY status.tooltip         "Status:">
+<!ENTITY blocked.tooltip        "Blockierte Elemente auf dieser Seite:">
+<!ENTITY filters.tooltip        "Am meisten angewandte Filter:">
+
+<!ENTITY menuitem.label         "Adblock Plus - Einstellungen">
+<!ENTITY menuitem.accesskey     "A">
+<!ENTITY toolbarbutton.label    "Adblock Plus">
+
+<!ENTITY view.blockableItems.label  "Adblock Plus: Elemente der geöffneten Seite">
+
+<!ENTITY context.image.label    "Adblock Plus: Grafik blockieren">
+<!ENTITY context.object.label   "Adblock Plus: Objekt blockieren">
+<!ENTITY context.frame.label    "Adblock Plus: Frame blockieren">
+<!ENTITY context.media.label    "Adblock Plus: Audio-/Video-Element blockieren">
+<!ENTITY context.removeWhitelist.label  "Adblock Plus: Auf dieser Seite wieder aktivieren">
+
+<!ENTITY sidebar.title          "Elemente der geöffneten Seite">
+
+<!ENTITY settings.label         "Einstellungen">
+<!ENTITY settings.accesskey     "T">
+<!ENTITY opensidebar.label      "Blockierbare Elemente öffnen">
+<!ENTITY opensidebar.accesskey  "B">
+<!ENTITY closesidebar.label     "Blockierbare Elemente schließen">
+<!ENTITY closesidebar.accesskey "B">
+<!ENTITY whitelist.site.label   "Deaktivieren: auf ?1?">
+<!ENTITY whitelist.page.label   "Deaktivieren: nur auf dieser Seite">
+
+<!ENTITY objecttab.title        "Blockieren">
+<!ENTITY objecttab.tooltip      "Klicken Sie hier, um dieses Objekt mit Adblock Plus zu blockieren">

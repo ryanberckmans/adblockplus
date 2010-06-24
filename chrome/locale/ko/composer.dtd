@@ -1,0 +1,46 @@
+<!ENTITY dialog.title "필터 추가">
+<!ENTITY accept.label "추가">
+<!ENTITY advanced.label "고급 보기">
+<!ENTITY basic.label "기본 보기">
+<!ENTITY disabled.warning "현재 Adblock Plus 사용 안 함 : 필터 추가 가능 + 필터 적용 안 함 [link]⇔ Adblock Plus 사용함[/link]">
+<!ENTITY groupDisabled.warning "현재 &quot;?1?&quot; 그룹 사용 안 함 : 필터 추가 가능 + 필터 적용 안 함 [link]⇔ 이 그룹 사용함[/link]">
+<!ENTITY filter.label "새 필터">
+<!ENTITY filter.accesskey "f">
+<!ENTITY preferences.label "필터 목록에서 주소 편집">
+<!ENTITY preferences.accesskey "S">
+<!ENTITY type.filter.label "차단 필터">
+<!ENTITY type.filter.accesskey "B">
+<!ENTITY type.whitelist.label "허용 필터">
+<!ENTITY type.whitelist.accesskey "x">
+<!ENTITY pattern.label "패턴 찾기">
+<!ENTITY pattern.explanation "패턴과 일치하는 주소에만 필터가 적용되며, 패턴은 일치하는 주소를 찾는 텍스트 문자열로서 필터에 반영됩니다.">
+<!ENTITY regexp.warning "[느린 필터] 패턴 끝에 와일드카드(*)가 없으면 정규 표현식으로 해석되며, 웹 페이지를 불러오는 속도가 느려짐.">
+<!ENTITY shortpattern.warning "[느린 필터] 패턴의 길이가 너무 짧으면 필터가 비효율적으로 처리되며, 웹 페이지를 불러오는 속도가 느려짐.">
+<!ENTITY custom.pattern.label "사용자 정의 (C)">
+<!ENTITY custom.pattern.accesskey "C">
+<!ENTITY anchors.label "패턴 일치 조건 :">
+<!ENTITY anchor.start.label "주소 시작 부분에 일치">
+<!ENTITY anchor.start.accesskey "g">
+<!ENTITY anchor.start.flexible.label "도메인 시작 부분에 일치">
+<!ENTITY anchor.start.flexible.accesskey "g">
+<!ENTITY anchor.end.label "주소 끝 부분에 일치">
+<!ENTITY anchor.end.accesskey "n">
+<!ENTITY options.label "옵션">
+<!ENTITY domainRestriction.label "지정된 도메인에만 적용(D) :">
+<!ENTITY domainRestriction.accesskey "d">
+<!ENTITY domainRestriction.help "1. 파이프 기호(|)를 이용해 여러 도메인에 적용 (예시 : site1.com|site2.net). 2. 물결 기호(~)를 이용해 필터를 적용하지 않을 도메인 지정 (예시 : ~site.com)">
+<!ENTITY firstParty.label "도메인이 같은 사이트에만 적용">
+<!ENTITY firstParty.accesskey "r">
+<!ENTITY thirdParty.label "도메인이 다른 사이트에만 적용">
+<!ENTITY thirdParty.accesskey "T">
+<!ENTITY matchCase.label "대/소문자 구분">
+<!ENTITY matchCase.accesskey "M">
+<!ENTITY types.label "적용 형식">
+<!ENTITY selectAllTypes.label "모두 선택">
+<!ENTITY unselectAllTypes.label "선택 없음">
+<!ENTITY collapse.label "차단된 요소의 영역 접기">
+<!ENTITY collapse.accesskey "l">
+<!ENTITY collapse.default.yes.label "기본값 (예)">
+<!ENTITY collapse.default.no.label "기본값 (아니오)">
+<!ENTITY collapse.yes.label "예">
+<!ENTITY collapse.no.label "아니오">

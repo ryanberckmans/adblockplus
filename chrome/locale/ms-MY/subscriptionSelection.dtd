@@ -1,0 +1,10 @@
+<!ENTITY dialog.title "Selamat datang ke Adblock Plus">
+<!ENTITY dialog.title.edit "Ubah deskripsi penapis">
+<!ENTITY other.label "Tambah langganan lain">
+<!ENTITY other.accesskey "T">
+<!ENTITY title.label "Tajuk langganan">
+<!ENTITY title.accesskey "T">
+<!ENTITY location.label "Lokasi senarai penapis:">
+<!ENTITY location.accesskey "L">
+<!ENTITY autodownload.label "Kemaskini automatik">
+<!ENTITY autodownload.accesskey "K">

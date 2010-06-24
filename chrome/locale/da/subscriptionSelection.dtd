@@ -1,0 +1,9 @@
+<!ENTITY dialog.title.edit "Rediger filter-abonnement">
+<!ENTITY other.label "Tilføj endnu et abonnement">
+<!ENTITY other.accesskey "T">
+<!ENTITY title.label "Abonnement-titel:">
+<!ENTITY title.accesskey "T">
+<!ENTITY location.label "Filterliste-placering:">
+<!ENTITY location.accesskey "L">
+<!ENTITY autodownload.label "Opdater automatisk">
+<!ENTITY autodownload.accesskey "P">

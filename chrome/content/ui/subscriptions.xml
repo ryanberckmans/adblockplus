@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE subscriptions SYSTEM "chrome://adblockplus/locale/subscriptionSelection.dtd">
+
+<subscriptions>
+  <subscription title="EasyList (English)"
+                url="https://easylist-downloads.adblockplus.org/easylist.txt"
+                homepage="http://easylist.adblockplus.org/"
+                prefixes="en"
+                author="Ares2, Michael, Erunno"/>
+  <subscription title="ChinaList (汉语)"
+                url="http://adblock-chinalist.googlecode.com/svn/trunk/adblock.txt"
+                homepage="http://code.google.com/p/adblock-chinalist/"
+                prefixes="zh"
+                author="Gythialy"/>
+  <subscription title="EasyList Germany+EasyList (Deutsch)"
+                url="https://easylist-downloads.adblockplus.org/ares+easylist.txt"
+                homepage="http://easylist.adblockplus.org/"
+                prefixes="de"
+                author="Ares2, Erunno"/>
+  <subscription title="Fanboy's List (English)"
+                url="http://www.fanboy.co.nz/adblock/fanboy-adblocklist-current-expanded.txt"
+                homepage="http://www.fanboy.co.nz/adblock/"
+                prefixes="en"
+                author="fanboy, Hubird"/>
+  <subscription title="Filter von Dr.Evil (Deutsch)"
+                url="http://adblock.maltekraus.de/adblock.txt"
+                homepage="http://www.camp-firefox.de/forum/viewtopic.php?t=55998"
+                prefixes="de"
+                author="Dr.Evil"/>
+  <subscription title="Liste FR+EasyList (français)"
+                url="https://easylist-downloads.adblockplus.org/liste_fr+easylist.txt"
+                homepage="http://forums.lanik.us/viewforum.php?f=91"
+                prefixes="fr"
+                author="Lian"/>
+  <subscription title="ROList+EasyList (românesc)"
+                url="https://easylist-downloads.adblockplus.org/rolist+easylist.txt"
+                homepage="http://www.picpoc.ro/"
+                prefixes="ro"
+                author="MenetZ"/>
+  <subscription title="RuAdList (русский, українська)"
+                url="http://ruadlist.googlecode.com/svn/trunk/adblock.txt"
+                homepage="http://code.google.com/p/ruadlist/"
+                prefixes="ru,uk"
+                author="Lain_13"/>
+  <subscription title="Việt Nam List+EasyList (Việt)"
+                url="https://easylist-downloads.adblockplus.org/abpvn+easylist.txt"
+                homepage="http://code.google.com/p/adblockplus-vietnam/"
+                prefixes="vi"
+                author="NGUYỄN Mạnh Hùng"/>
+  <subscription title="&other.label;…"
+                url=""
+                homepage=""
+                prefixes=""
+                author=""/>
+</subscriptions>

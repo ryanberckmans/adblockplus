@@ -1,0 +1,151 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is Adblock Plus.
+ *
+ * The Initial Developer of the Original Code is
+ * Wladimir Palant.
+ * Portions created by the Initial Developer are Copyright (C) 2006-2010
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#abp-status
+{
+  cursor: pointer;
+}
+
+toolbar[iconsize="small"] #abp-toolbarbutton,
+#PersonalToolbar #abp-toolbarbutton,
+#header-view-toolbar > #abp-toolbarbutton,
+#abp-status {
+  list-style-image: url("abp-status-16.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+toolbar[iconsize="small"] #abp-toolbarbutton[abpstate="disabled"],
+#PersonalToolbar #abp-toolbarbutton[abpstate="disabled"],
+#header-view-toolbar > #abp-toolbarbutton[abpstate="disabled"],
+#abp-status[abpstate="disabled"] {
+  -moz-image-region: rect(16px, 16px, 32px, 0px);
+}
+toolbar[iconsize="small"] #abp-toolbarbutton[abpstate="whitelisted"],
+#PersonalToolbar #abp-toolbarbutton[abpstate="whitelisted"],
+#header-view-toolbar > #abp-toolbarbutton[abpstate="whitelisted"],
+#abp-status[abpstate="whitelisted"] {
+  -moz-image-region: rect(32px, 16px, 48px, 0px);
+}
+
+#abp-toolbar-popup {
+  list-style-image: none;
+  -moz-image-region: rect(0px, 0px, 0px, 0px);
+}
+
+toolbox[vertical="true"] toolbar #abp-toolbarbutton dropmarker {
+  display: none !important;
+}
+
+menuitem[default="true"] {
+  font-weight: bold;
+}
+
+#abp-toolbarbutton,
+.abp-site-info {
+  list-style-image: url("abp-status.png");
+  -moz-image-region: rect(0px, 24px, 24px, 0px);
+}
+#abp-toolbarbutton[abpstate="disabled"],
+.abp-site-info[abpstate="disabled"] {
+  -moz-image-region: rect(24px, 24px, 48px, 0px);
+}
+#abp-toolbarbutton[abpstate="whitelisted"],
+.abp-site-info[abpstate="disabled_site"] {
+  -moz-image-region: rect(48px, 24px, 72px, 0px);
+}
+
+/* Thunderbird-specific toolbar icon styles */
+#header-view-toolbar > #abp-toolbarbutton
+{
+  -moz-appearance: dualbutton;
+  padding: 0px !important;
+}
+
+/* Hide toolbar icon text in Thunderbird to save space */
+#header-view-toolbar > #abp-toolbarbutton .toolbarbutton-text
+{
+  display: none;
+}
+
+/* SeaMonkey expects the icon to be rather large, add margin */
+#mail-toolbox #abp-toolbarbutton .toolbarbutton-icon
+{
+  margin-top: 5px;
+}
+
+#abp-status-image {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#abp-site-info1 .pageaction-image {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+}
+
+#abp-toolbarbutton > toolbarbutton {
+  /* Argh, Songbird defines image region directly on the anonymous toolbarbutton element */
+  -moz-image-region: inherit !important;
+}
+
+#abp-tooltip {
+  max-width: none;
+}
+
+#abp-tooltip label {
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+#abp-tooltip description:not([hidden="true"])+label {
+  margin-top: 10px;
+}
+
+#abp-sidebar-title {
+  padding-left: 4px;
+}
+
+#abp-sidebar-toolbar {
+    display: -moz-box !important;
+    visibility: visible !important;
+}
+
+#abp-sidebar-close {
+  padding: 4px 2px;
+  border-style: none !important;
+  -moz-user-focus: normal;
+  list-style-image: url("close.png");
+  -moz-appearance: none;
+  -moz-image-region: rect(0px, 14px, 14px, 0px);
+}
+
+#abp-sidebar-close:hover {
+  -moz-image-region: rect(0px, 28px, 14px, 14px);
+}
+
+#abp-sidebar-close:hover:active {
+  -moz-image-region: rect(0px, 42px, 14px, 28px);
+}
