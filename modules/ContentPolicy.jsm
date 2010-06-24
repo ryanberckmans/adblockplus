@@ -212,7 +212,6 @@ var Policy =
      */
     processNode: function(wnd, node, contentType, location, collapse)
     {
-        Utils.alert(null, "processNode", "processNode");
         let topWnd = wnd.top;
         if (!topWnd || !topWnd.location || !topWnd.location.href)
             return true;
