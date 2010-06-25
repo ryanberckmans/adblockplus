@@ -147,9 +147,9 @@ var Policy =
             collapsedClass +=  String.fromCharCode(offset + Math.random() * 26);
   
         collapseStyle = Utils.makeURI("data:text/css," +
-                                      encodeURIComponent("." + "no-collapsed-class" +
+                                      encodeURIComponent("." + collapsedClass +
                                                          "{-moz-binding: url(chrome://global/content/bindings/general.xml#foobarbazdummy) !important;}"));
-        Utils.styleService.loadAndRegisterSheet(collapseStyle, Ci.nsIStyleSheetService.USER_SHEET);
+        //Utils.styleService.loadAndRegisterSheet(collapseStyle, Ci.nsIStyleSheetService.USER_SHEET);
         TimeLine.log("done registering stylesheet");
   
         // Register our content policy
