@@ -147,7 +147,7 @@ var Policy =
             collapsedClass +=  String.fromCharCode(offset + Math.random() * 26);
   
         collapseStyle = Utils.makeURI("data:text/css," +
-                                      encodeURIComponent("." + collapsedClass +
+                                      encodeURIComponent("." + "no-collapsed-class" +
                                                          "{-moz-binding: url(chrome://global/content/bindings/general.xml#foobarbazdummy) !important;}"));
         Utils.styleService.loadAndRegisterSheet(collapseStyle, Ci.nsIStyleSheetService.USER_SHEET);
         TimeLine.log("done registering stylesheet");
@@ -380,7 +380,7 @@ var PolicyPrivate =
         if (!(contentType in Policy.typeDescr))
             contentType = Policy.type.OTHER;
 
-        return (Policy.processNode(wnd, node, contentType, location, false) ? Ci.nsIContentPolicy.ACCEPT : Ci.nsIContentPolicy.REJECT_REQUEST);
+        return (Policy.processNode(wnd, node, contentType, location, false) ? Ci.nsIContentPolicy.ACCEPT : Ci.nsIContentPolicy.ACCEPT);
     },
 
     shouldProcess: function(contentType, contentLocation, requestOrigin, insecNode, mimeType, extra)
@@ -499,11 +499,11 @@ function postProcessNodes()
                                      let property = (hasCols ? "cols" : "rows");
                                      let weights = parentNode[property].split(",");
                                      weights[index] = "0";
-                                     parentNode[property] = weights.join(",");
+                                     //parentNode[property] = weights.join(",");
                                  }
                          }
-                     else
-                         node.className += " " + collapsedClass;
+                     //else
+                     //    node.className += " " + collapsedClass;
                  }
 }
 
