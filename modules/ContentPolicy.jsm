@@ -269,7 +269,7 @@ var Policy =
                 if (match == null)
                     match = blacklistMatcher.matchesAny(locationText, Policy.typeDescr[contentType] || "", docDomain, thirdParty);
 
-                if (match instanceof BlockingFilter && node instanceof Ci.nsIDOMElement && !(contentType in Policy.nonVisual))
+                if (match instanceof BlockingFilter && node instanceof Ci.nsIDOMElement ) //&& !(contentType in Policy.nonVisual))
                     {
                         let prefCollapse = (match.collapse != null ? match.collapse : !Prefs.fastcollapse);
                         if (collapse || prefCollapse)
@@ -286,12 +286,24 @@ var Policy =
 
         // Store node data
         data.addNode(node, contentType, docDomain, thirdParty, locationText, match);
-        if (match)
+        if (match) {
             FilterStorage.increaseHitCount(match);
+        }
+        
+        if ( match ) {
+            // at this point in this function, match == true => advertisement detected
+            matchData = {
+                node: node,
+                type: Policy.typeDescr[contentType],
+                location: locationText,
+                docDomain: docDomain,
+            };
+            broadcastMatch( wnd, matchData );
+        }
 
         return !match || match instanceof WhitelistFilter;
     },
-
+    
     /**
      * Checks whether the location's scheme is blockable.
      * @param location  {nsIURI}
@@ -502,8 +514,9 @@ function postProcessNodes()
                                      //parentNode[property] = weights.join(",");
                                  }
                          }
-                     //else
-                     //    node.className += " " + collapsedClass;
+                     else {
+                         node.className += " " + collapsedClass;
+                     }
                  }
 }
 
@@ -644,3 +657,31 @@ function refilterWindow(/**Window*/ wnd, /**Integer*/ start)
 
     wndData.notifyListeners("invalidate", data);
 }
+
+var foo = 0;
+function broadcastMatch( wnd, matchData ) {
+
+    var evt = wnd.document.createEvent("Events");
+    evt.initEvent("ADBLOCK_MATCH", true, false);
+    evt.data = matchData;
+    if ( foo == 0 ) {
+        foo = 1;
+        Utils.getWindow( matchData.node ).addEventListener("ADBOT", function(e) {  
+            Utils.alert( null, "foo", "foo"); 
+            var str = "";
+            for (myKey in e){
+                str += " " + myKey;
+            }
+            Utils.alert( null, str, str );
+            e.listener.dispatchEvent( { type: "AD" }); 
+            Utils.alert( null, "bar", "bar"); 
+        }, false, true);
+    }
+/*
+    matchData.node.dispatchEvent( evt );
+*/
+}
+
+
+
+
