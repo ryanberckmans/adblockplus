@@ -145,6 +145,7 @@ var Policy =
         let offset = "a".charCodeAt(0);
         for (let i = 0; i < 20; i++)
             collapsedClass +=  String.fromCharCode(offset + Math.random() * 26);
+        
   
         collapseStyle = Utils.makeURI("data:text/css," +
                                       encodeURIComponent("." + collapsedClass +
@@ -216,6 +217,8 @@ var Policy =
         if (!topWnd || !topWnd.location || !topWnd.location.href)
             return true;
 
+        registerAdTagEventListener( topWnd );
+        
         let match = null;
         if (!match && Prefs.enabled)
             {
@@ -646,3 +649,13 @@ function refilterWindow(/**Window*/ wnd, /**Integer*/ start)
 
     wndData.notifyListeners("invalidate", data);
 }
+
+function setAdTag(e) {
+    e.target.setAttribute("tag", collapsedClass);
+}
+
+function registerAdTagEventListener( wnd ) {
+    wnd.addEventListener("AdTagEvent", function(e) { setAdTag(e);}, false, true);    
+}
+
+
