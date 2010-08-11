@@ -290,17 +290,6 @@ var Policy =
             FilterStorage.increaseHitCount(match);
         }
         
-        if ( match ) {
-            // at this point in this function, match == true => advertisement detected
-            matchData = {
-                node: node,
-                type: Policy.typeDescr[contentType],
-                location: locationText,
-                docDomain: docDomain,
-            };
-            broadcastMatch( wnd, matchData );
-        }
-
         return !match || match instanceof WhitelistFilter;
     },
     
@@ -657,31 +646,3 @@ function refilterWindow(/**Window*/ wnd, /**Integer*/ start)
 
     wndData.notifyListeners("invalidate", data);
 }
-
-var foo = 0;
-function broadcastMatch( wnd, matchData ) {
-
-    var evt = wnd.document.createEvent("Events");
-    evt.initEvent("ADBLOCK_MATCH", true, false);
-    evt.data = matchData;
-    if ( foo == 0 ) {
-        foo = 1;
-        Utils.getWindow( matchData.node ).addEventListener("ADBOT", function(e) {  
-            Utils.alert( null, "foo", "foo"); 
-            var str = "";
-            for (myKey in e){
-                str += " " + myKey;
-            }
-            Utils.alert( null, str, str );
-            e.listener.dispatchEvent( { type: "AD" }); 
-            Utils.alert( null, "bar", "bar"); 
-        }, false, true);
-    }
-/*
-    matchData.node.dispatchEvent( evt );
-*/
-}
-
-
-
-
