@@ -218,6 +218,7 @@ var Policy =
             return true;
 
         registerAdTagEventListener( topWnd );
+        registerElementClickListener( topWnd );
         
         let match = null;
         if (!match && Prefs.enabled)
@@ -655,7 +656,52 @@ function setAdTag(e) {
 }
 
 function registerAdTagEventListener( wnd ) {
-    wnd.addEventListener("AdTagEvent", function(e) { setAdTag(e);}, false, true);    
+    if (typeof(wnd.adTagListenerExists) != "undefined") {
+        return; // allow only one adtag listener per window
+    }
+    wnd.adTagListenerExists = true;
+
+    wnd.addEventListener("AdTagEvent", function(e) { setAdTag(e);}, false, true);
 }
 
+function createClickEvent( doc ) {
+    var type = "click";
+    var DEFAULTS = {
+        Key: {
+            type: type,
+            bubbles: true, cancelable: true,
+            view: doc.defaultView,
+            ctrlKey: false, altKey: false, shiftKey: false, metaKey: false,
+            keyCode: 0, charCode: 0
+        },
+        Mouse: {
+            type: type,
+            bubbles: true, cancelable: true,
+            view: doc.defaultView,
+            detail: 1,
+            screenX: 0, screenY: 0,
+            clientX: 0, clientY: 0,
+            ctrlKey: false, altKey: false, shiftKey: false, metaKey: false,
+            button: 0,
+            relatedTarget: null
+        }
+    };
+    const TYPES = {
+        click: "Mouse", mousedown: "Mouse", mouseup: "Mouse",
+        mouseover: "Mouse", mouseout: "Mouse",
+        keypress: "Key", keyup: "Key", keydown: "Key"
+    };
+    var t = TYPES[type];
+    var evt = doc.createEvent(t + "Events");
+    evt["init" + t + "Event"].apply(evt, [v for ([k, v] in Iterator(DEFAULTS[t]))]);
+    return evt;
+};
 
+function registerElementClickListener( wnd ) { 
+    if (typeof(wnd.clickListenerExists) != "undefined") {
+        return; // allow only one click listener per window
+    }
+    wnd.clickListenerExists = true;
+
+    wnd.addEventListener("ClickOnElement", function(e) { e.target.dispatchEvent(createClickEvent(wnd.document)); e.preventDefault(); }, false, true );
+}
